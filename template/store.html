@@ -1,0 +1,95 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<head>
+    <title>online shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{% static 'style/store.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'style/bootstrap.css' %}" type="text/css" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 id="logo">ONLINE SHOP</h1>
+                </div>
+                <div class="col-md-8">
+                    <ul id="menu" class="float-md-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a class="reg">Registration</a></li>
+                        <li><a href="#">Cart<span class="num"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+            <div class="cart">
+                <span class="head">cart</span>
+                <div class="cartHead">
+                    <div class="sr.No.">sr.</div>
+                    <div class="item">item</div>
+                    <div class="quantity">quantity</div>
+                    <div class="price">price</div>
+                </div>
+            </div>
+<div id="reg"></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="items">
+{% for dress in dresses %}
+                <div class="col-4">
+                    <div class="itemContainer" id="">
+                        <img src="{{baseUrl}}\{{dress.img}}" alt="error">
+                        <span style="float:right">{{dress.price}}</span>
+                        <p>{{dress.name}}</p>
+                        <button class="ADDbtn">add to cart</button>
+                    </div>
+                </div>
+
+{% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footer-sidebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-widget">
+                        <h4></h4>
+                        <p></p>                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-widget">
+                        <h4>CONTACT</h4>
+                        <p>phone no. :9458216959<br>
+                        email id: prity.dudi@outlook.com
+                        
+                        </p>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">preeti dudi</div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script type="text/javascript" src="{% static 'js/store.js' %}">    </script>
+</body></html>
